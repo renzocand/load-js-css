@@ -1,4 +1,6 @@
 # Aqui esta el ARCHIVO
+
+### dynamic-load-script.ts
 ```
 // Source Code:  https://medium.com/better-programming/angular-load-external-javascript-file-dynamically-3d14dde815cb
 
@@ -129,3 +131,17 @@ export class DynamicScriptLoader {
 
 }
 ```
+
+## Se utliza
+
+
+```
+import { DynamicScriptLoader } from 'app/shared_mgr/utils/dynamic-load-script';
+
+private dynamicScriptLoader = new DynamicScriptLoader();
+
+ this.dynamicScriptLoader.loadScripts([
+      { name: 'd3.v5', src: 'assets/js/d3/v5/d3.v5.min.js ', element: 'script' },
+      { name: 'delaunay', src: 'assets/js/d3/v5/delaunay.min.js', element: 'script' },
+    ], () => this.iniciarGrafico())
+  ```
